@@ -120,18 +120,16 @@
 
 - (void)configureCell:(CBStatusCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSInteger row = indexPath.row;
-    CBStatus *status = [self.status objectAtIndex:row];
+    NSURL *avatarImageURL = [NSURL URLWithString:@"http://f1.howzhi.com/ci/2012/12-21/110202ac8518955525.jpg"];
     
-    cell.text = status.text;
-//    cell.image = status.image;
-    cell.imageURL = status.imageURL;
-    cell.repostText = status.repostText;
-//    cell.repostImage = status.repostImage;
-    cell.repostImageURL = status.repostImageURL;
-    cell.avatarURL = status.avatarURL;
-    cell.commentCount = status.commentCount;
-    cell.repostCount = status.repostCount;
+    cell.name = @"冷笑话精选";
+    cell.avatarURL = avatarImageURL;
+    cell.postDate = [NSDate dateWithTimeIntervalSinceNow:86401];
+    cell.text = @"iPhone是苹果公司旗下的一个智能手机系列，此系列手机搭载苹果公司研发的iOS手机操作系统。第一代iPhone于2007年1月9日由时任苹果公司CEO的史蒂夫·乔布斯发布，并在6月29日正式发售";
+
+    [cell setRepostText:@"iOS是由苹果公司开发的操作系统。最初是设计给iPhone使用，后来陆续套用到iPod touch、iPad以及Apple TV产品上。" andRepostImageWithURL:avatarImageURL];
+    cell.textFrom = @"sWiBoo";
+    [cell setCommentCount:@1234 andRepostCount:@23456];
 }
 
 @end
