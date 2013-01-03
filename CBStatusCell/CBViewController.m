@@ -120,12 +120,12 @@
 
 - (void)configureCell:(CBStatusCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSURL *avatarImageURL = [NSURL URLWithString:@"http://f1.howzhi.com/ci/2012/12-21/110202ac8518955525.jpg"];
+    NSURL *avatarImageURL = [NSURL URLWithString:@"http://tp1.sinaimg.cn/1268530512/180/5619272112/1"];
     
-    cell.name = @"冷笑话精选";
+    cell.name = @"Apple iOS";
     cell.avatarURL = avatarImageURL;
     cell.postDate = [NSDate dateWithTimeIntervalSinceNow:86401];
-    cell.text = @"iPhone是苹果公司旗下的一个智能手机系列，此系列手机搭载苹果公司研发的iOS手机操作系统。第一代iPhone于2007年1月9日由时任苹果公司CEO的史蒂夫·乔布斯发布，并在6月29日正式发售";
+    cell.text = @"iPhone是苹果公司旗下的一个智能手机系列，此系列手机搭载苹果公司研发的iOS手机操作系统。第一代iPhone于2007年1月9日由时任苹果公司CEO的史蒂夫·乔布斯发布，并在6月29日正式发售。";
 
     [cell setRepostText:@"iOS是由苹果公司开发的操作系统。最初是设计给iPhone使用，后来陆续套用到iPod touch、iPad以及Apple TV产品上。" andRepostImageWithURL:avatarImageURL];
     cell.textFrom = @"sWiBoo";

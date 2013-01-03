@@ -19,7 +19,6 @@
 @property (strong, nonatomic) UILabel *postTextLabel;
 @property (strong, nonatomic) UIImageView *repostTextBackgroudView;
 @property (strong, nonatomic) UILabel *repostTextLabel;
-//@property (strong, nonatomic) UIImageView *repostImageView;
 @property (strong, nonatomic) UIButton *repostImageView;
 @property (strong, nonatomic) UILabel *textFromLabel;
 @property (strong, nonatomic) UILabel *commentAndRepostCountLabel;
@@ -47,7 +46,6 @@
         self.postTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(59, 28, 240, 18)];
         self.repostTextBackgroudView = [[UIImageView alloc] initWithFrame:CGRectMake(59, 59, 240, 128)];
         self.repostTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 3, 240, 20)];
-//        self.repostImageView = [[UIImageView alloc] initWithFrame:CGRectMake(5, 25, 50, 50)];
         self.repostImageView = [UIButton buttonWithType:UIButtonTypeCustom];
         self.textFromLabel = [[UILabel alloc] initWithFrame:CGRectMake(59, 195, 120, 14)];
         self.commentAndRepostCountLabel = [[UILabel alloc] initWithFrame:CGRectMake(187, 195, 112, 14)];
@@ -95,8 +93,6 @@
         CALayer *avatarViewLayer = self.avatarView.layer;
         avatarViewLayer.masksToBounds = YES;
         avatarViewLayer.cornerRadius = 4;
-        avatarViewLayer.borderWidth = 1;
-        avatarViewLayer.borderColor = [[UIColor blackColor] CGColor];
         
         
         /* 加入到当前视图 */
@@ -118,7 +114,23 @@
 #pragma mark - Cell Height
 - (CGFloat)height
 {
-    return 245;
+    BOOL hasText = (self.text!=nil ? YES:NO);
+    BOOL hasPostText = (self.repostTextBackgroudView.hidden ? NO:YES);
+    
+    CGFloat height = 0;
+    
+    if (hasText && hasPostText)
+    {
+        height = 25 + 3 + self.postTextLabel.frame.size.height + 3 + self.repostTextBackgroudView.frame.size.height + 3 + 14 + 6;
+    }
+    else if (hasText) {
+        height = 25 + 3 + self.postTextLabel.frame.size.height + 3 + 14 + 6;
+    }
+    else if (hasPostText) {
+        height = 25 + 3 + self.repostTextBackgroudView.frame.size.height + 3 + 14 + 6;
+    }
+    
+    return height;
 }
 
 
@@ -223,17 +235,17 @@
     
     if (hasText && hasRepostText)
     {
-        CGFloat y = self.repostTextBackgroudView.frame.origin.y + self.repostTextBackgroudView.frame.size.height;
+        CGFloat y = self.repostTextBackgroudView.frame.origin.y + self.repostTextBackgroudView.frame.size.height + 3;
         self.textFromLabel.frame = CGRectMake(59, y, 120, 14);
     }
     else if (hasText)
     {
-        CGFloat y = self.postTextLabel.frame.origin.y + self.postTextLabel.frame.size.height;
+        CGFloat y = self.postTextLabel.frame.origin.y + self.postTextLabel.frame.size.height + 3;
         self.textFromLabel.frame = CGRectMake(59, y, 120, 14);
     }
     else if (hasRepostText)
     {
-        CGFloat y = self.repostTextBackgroudView.frame.origin.y + self.repostTextBackgroudView.frame.size.height;
+        CGFloat y = self.repostTextBackgroudView.frame.origin.y + self.repostTextBackgroudView.frame.size.height + 3;
         self.textFromLabel.frame = CGRectMake(59, y, 120, 14);
     }
     
@@ -253,17 +265,17 @@
 
     if (hasText && hasRepostText)
     {
-        CGFloat y = self.repostTextBackgroudView.frame.origin.y + self.repostTextBackgroudView.frame.size.height;
+        CGFloat y = self.repostTextBackgroudView.frame.origin.y + self.repostTextBackgroudView.frame.size.height + 3;
         self.commentAndRepostCountLabel.frame = CGRectMake(187, y, 112, 14);
     }
     else if (hasText)
     {
-        CGFloat y = self.postTextLabel.frame.origin.y + self.postTextLabel.frame.size.height;
+        CGFloat y = self.postTextLabel.frame.origin.y + self.postTextLabel.frame.size.height + 3;
         self.commentAndRepostCountLabel.frame = CGRectMake(187, y, 112, 14);
     }
     else if (hasRepostText)
     {
-        CGFloat y = self.repostTextBackgroudView.frame.origin.y + self.repostTextBackgroudView.frame.size.height;
+        CGFloat y = self.repostTextBackgroudView.frame.origin.y + self.repostTextBackgroudView.frame.size.height + 3;
         self.commentAndRepostCountLabel.frame = CGRectMake(187, y, 112, 14);
     }
     

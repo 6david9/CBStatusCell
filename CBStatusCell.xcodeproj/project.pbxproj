@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		080A25461695C52100FC12EE /* CBStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 080A25451695C52100FC12EE /* CBStatusCell.m */; };
 		08101A49166B2A82005C84A2 /* avatar_default_big.png in Resources */ = {isa = PBXBuildFile; fileRef = 08101A43166B2A82005C84A2 /* avatar_default_big.png */; };
 		08101A4A166B2A82005C84A2 /* avatar_default_big@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08101A44166B2A82005C84A2 /* avatar_default_big@2x.png */; };
 		08101A4B166B2A82005C84A2 /* timeline_comment_count_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 08101A45166B2A82005C84A2 /* timeline_comment_count_icon.png */; };
@@ -35,7 +36,6 @@
 		088812E0166B27EF000C4603 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 088812BB166B27EE000C4603 /* Foundation.framework */; };
 		088812E8166B27EF000C4603 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 088812E6166B27EF000C4603 /* InfoPlist.strings */; };
 		088812EB166B27EF000C4603 /* CBStatusCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 088812EA166B27EF000C4603 /* CBStatusCellTests.m */; };
-		088812F9166B2875000C4603 /* CBStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 088812F7166B2875000C4603 /* CBStatusCell.m */; };
 		08E84F1A166B83EB0033D5FC /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E84F07166B83EB0033D5FC /* MKAnnotationView+WebCache.m */; };
 		08E84F1B166B83EB0033D5FC /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E84F09166B83EB0033D5FC /* SDImageCache.m */; };
 		08E84F1C166B83EB0033D5FC /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 08E84F0D166B83EB0033D5FC /* SDWebImageDecoder.m */; };
@@ -60,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		080A25441695C52100FC12EE /* CBStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBStatusCell.h; sourceTree = "<group>"; };
+		080A25451695C52100FC12EE /* CBStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBStatusCell.m; sourceTree = "<group>"; };
 		08101A43166B2A82005C84A2 /* avatar_default_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = avatar_default_big.png; path = ../../sWiBoo/sWiBoo/Images/avatar_default_big.png; sourceTree = "<group>"; };
 		08101A44166B2A82005C84A2 /* avatar_default_big@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "avatar_default_big@2x.png"; path = "../../sWiBoo/sWiBoo/Images/avatar_default_big@2x.png"; sourceTree = "<group>"; };
 		08101A45166B2A82005C84A2 /* timeline_comment_count_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = timeline_comment_count_icon.png; path = ../../sWiBoo/sWiBoo/Images/timeline_comment_count_icon.png; sourceTree = "<group>"; };
@@ -95,8 +97,6 @@
 		088812E7166B27EF000C4603 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		088812E9166B27EF000C4603 /* CBStatusCellTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBStatusCellTests.h; sourceTree = "<group>"; };
 		088812EA166B27EF000C4603 /* CBStatusCellTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CBStatusCellTests.m; sourceTree = "<group>"; };
-		088812F7166B2875000C4603 /* CBStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CBStatusCell.m; path = ../../sWiBoo/sWiBoo/CBStatusCell.m; sourceTree = "<group>"; };
-		088812F8166B2875000C4603 /* CBStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CBStatusCell.h; path = ../../sWiBoo/sWiBoo/CBStatusCell.h; sourceTree = "<group>"; };
 		08E84F06166B83EB0033D5FC /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		08E84F07166B83EB0033D5FC /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		08E84F08166B83EB0033D5FC /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
@@ -153,10 +153,10 @@
 		08101A41166B2951005C84A2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				080A25441695C52100FC12EE /* CBStatusCell.h */,
+				080A25451695C52100FC12EE /* CBStatusCell.m */,
 				08E84F27166B971E0033D5FC /* NSString+MD5.h */,
 				08E84F28166B97260033D5FC /* NSString+MD5.m */,
-				088812F7166B2875000C4603 /* CBStatusCell.m */,
-				088812F8166B2875000C4603 /* CBStatusCell.h */,
 				08E84F05166B83EB0033D5FC /* SDWebImage */,
 				08101A4F166B2A87005C84A2 /* images */,
 				08101A55166B2FDF005C84A2 /* Mock Model */,
@@ -429,7 +429,6 @@
 				088812C6166B27EE000C4603 /* main.m in Sources */,
 				088812CA166B27EE000C4603 /* CBAppDelegate.m in Sources */,
 				088812D3166B27EF000C4603 /* CBViewController.m in Sources */,
-				088812F9166B2875000C4603 /* CBStatusCell.m in Sources */,
 				08101A54166B2F73005C84A2 /* CBStatus.m in Sources */,
 				08E84F1A166B83EB0033D5FC /* MKAnnotationView+WebCache.m in Sources */,
 				08E84F1B166B83EB0033D5FC /* SDImageCache.m in Sources */,
@@ -440,6 +439,7 @@
 				08E84F20166B83EB0033D5FC /* UIButton+WebCache.m in Sources */,
 				08E84F21166B83EB0033D5FC /* UIImageView+WebCache.m in Sources */,
 				08E84F29166B97270033D5FC /* NSString+MD5.m in Sources */,
+				080A25461695C52100FC12EE /* CBStatusCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
