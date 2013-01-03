@@ -61,8 +61,8 @@
         self.textFromLabel.font = [UIFont systemFontOfSize:11.0f];
         self.commentAndRepostCountLabel.font = [UIFont systemFontOfSize:11.0f];
         // 字体颜色
-        self.postDateLabel.textColor = [UIColor colorWithRed:174.0/255 green:174.0/255 blue:174.0/255 alpha:1.0];
-        self.textFromLabel.textColor = [UIColor grayColor];
+        self.postDateLabel.textColor = [UIColor colorWithRed:251.0/255 green:147.0/255 blue:24.0/255 alpha:1.0];
+        self.textFromLabel.textColor = [UIColor colorWithRed:134.0/255 green:134.0/255 blue:134.0/255 alpha:1.0];
         self.commentAndRepostCountLabel.textColor = [UIColor grayColor];
         // 对齐方式
         self.postDateLabel.textAlignment = UITextAlignmentRight;
@@ -198,13 +198,13 @@
     if (hasRepostText && hasImage)
     {
         CGSize repostTextSize = [self fitSizeForLabelText:repostText];
-        self.repostTextLabel.frame = CGRectMake(5, 6, 240, repostTextSize.height);
+        self.repostTextLabel.frame = CGRectMake(5, 6, 230, repostTextSize.height);
         self.repostImageView.frame = CGRectMake(5, 6+repostTextSize.height+5, 50, 50);
     }
     else if (hasRepostText)
     {
         CGSize repostTextSize = [self fitSizeForLabelText:repostText];
-        self.repostTextLabel.frame = CGRectMake(5, 6, 240, repostTextSize.height);
+        self.repostTextLabel.frame = CGRectMake(5, 6, 230, repostTextSize.height);
     }
     else if (hasImage)
     {
@@ -325,7 +325,7 @@
 
 - (CGSize)fitSizeForLabelText:(NSString *)text
 {
-    CGSize constrainedSize = CGSizeMake(240, 1000);
+    CGSize constrainedSize = CGSizeMake(230, 1000);
     
     return [text sizeWithFont:[UIFont systemFontOfSize:13.0f] constrainedToSize:constrainedSize];
 }
