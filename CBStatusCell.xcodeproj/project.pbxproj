@@ -17,6 +17,7 @@
 		08101A54166B2F73005C84A2 /* CBStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 08101A53166B2F73005C84A2 /* CBStatus.m */; };
 		08101A64166B677B005C84A2 /* timeline_rt_border_t.png in Resources */ = {isa = PBXBuildFile; fileRef = 08101A62166B677B005C84A2 /* timeline_rt_border_t.png */; };
 		08101A65166B677B005C84A2 /* timeline_rt_border_t@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08101A63166B677B005C84A2 /* timeline_rt_border_t@2x.png */; };
+		082D5DBC1695C0DA00CEC109 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 082D5DBB1695C0DA00CEC109 /* QuartzCore.framework */; };
 		08690900169548C400810273 /* cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086908FF169548C400810273 /* cell.xib */; };
 		088812BA166B27EE000C4603 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 088812B9166B27EE000C4603 /* UIKit.framework */; };
 		088812BC166B27EE000C4603 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 088812BB166B27EE000C4603 /* Foundation.framework */; };
@@ -70,6 +71,7 @@
 		08101A53166B2F73005C84A2 /* CBStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBStatus.m; sourceTree = "<group>"; };
 		08101A62166B677B005C84A2 /* timeline_rt_border_t.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = timeline_rt_border_t.png; path = ../../sWiBoo/sWiBoo/Images/timeline_rt_border_t.png; sourceTree = "<group>"; };
 		08101A63166B677B005C84A2 /* timeline_rt_border_t@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "timeline_rt_border_t@2x.png"; path = "../../sWiBoo/sWiBoo/Images/timeline_rt_border_t@2x.png"; sourceTree = "<group>"; };
+		082D5DBB1695C0DA00CEC109 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		086908FF169548C400810273 /* cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cell.xib; sourceTree = "<group>"; };
 		088812B5166B27EE000C4603 /* CBStatusCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBStatusCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		088812B9166B27EE000C4603 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -126,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				082D5DBC1695C0DA00CEC109 /* QuartzCore.framework in Frameworks */,
 				08E84F26166B84E50033D5FC /* MapKit.framework in Frameworks */,
 				08E84F24166B84B40033D5FC /* ImageIO.framework in Frameworks */,
 				088812BA166B27EE000C4603 /* UIKit.framework in Frameworks */,
@@ -200,6 +203,7 @@
 		088812AA166B27EE000C4603 = {
 			isa = PBXGroup;
 			children = (
+				082D5DBB1695C0DA00CEC109 /* QuartzCore.framework */,
 				08E84F25166B84E50033D5FC /* MapKit.framework */,
 				08E84F23166B84B40033D5FC /* ImageIO.framework */,
 				088812BF166B27EE000C4603 /* CBStatusCell */,
