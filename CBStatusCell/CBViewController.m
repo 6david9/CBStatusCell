@@ -30,34 +30,36 @@
     
     
     CBStatus *status = [[CBStatus alloc] init];
-    status.text = @"hellohellohellohellohellohellohellohellohello";
-    status.image = [UIImage imageNamed:@"jobs.jpg"];
+    status.name = @"Apple";
+    status.text = @"苹果公司，原称苹果电脑（股份有限）公司（Apple Computer, Inc.），于2007年1月9日在旧金山Macworld Expo上宣布改为现名。";
     status.imageURL = [NSURL URLWithString:@"http://ww1.sinaimg.cn/thumbnail/982a42b9gw1dzfpij9efjj.jpg"];
-    status.repostText = @"repost";
-    status.repostImage = [UIImage imageNamed:@"jobs.jpg"];
-    status.repostImageURL = [NSURL URLWithString:@"http://ww1.sinaimg.cn/thumbnail/982a42b9gw1dzfpij9efjj.jpg"];
-    status.avatarURL = [NSURL URLWithString:@"http://tp2.sinaimg.cn/2693551385/180/5629884601/1"];
+    status.repostText = @"在创立电脑前，创始人之一沃兹已经是一个电子学骇客，自1975年，他在惠普上班和帮斯蒂夫·乔布斯设计Atari电子游戏。";
+    status.repostImageURL = [NSURL URLWithString:@"http://upload.wikimedia.org/wikipedia/commons/f/f6/Steve_Wozniak.jpg"];
+    status.avatarURL = [NSURL URLWithString:@"http://upload.wikimedia.org/wikipedia/zh/a/ab/Apple-logo.png"];
     status.commentCount = [NSNumber numberWithInt:10];
     status.repostCount = [NSNumber numberWithInt:57009];
+    status.fromText = @"sWiBoo";
     [self.status addObject:status];
     
     CBStatus *status2 = [[CBStatus alloc] init];
-    status2.text = @"hellohellohellohellohellohellohellohellohello";
-    status2.image = [UIImage imageNamed:@"jobs.jpg"];
+    status2.name = @"Apple";
+    status2.text = @"苹果公司，原称苹果电脑（股份有限）公司（Apple Computer, Inc.），于2007年1月9日在旧金山Macworld Expo上宣布改为现名。";
     status2.imageURL = [NSURL URLWithString:@"http://ww1.sinaimg.cn/thumbnail/982a42b9gw1dzfpij9efjj.jpg"];
-    status2.avatarURL = [NSURL URLWithString:@"http://tp2.sinaimg.cn/2693551385/180/5629884601/1"];
+    status2.avatarURL = [NSURL URLWithString:@"http://upload.wikimedia.org/wikipedia/zh/a/ab/Apple-logo.png"];
     status2.commentCount = [NSNumber numberWithInt:10];
     status2.repostCount = [NSNumber numberWithInt:57];
+    status2.fromText = @"sWiBoo";
     [self.status addObject:status2];
     
     CBStatus *status3 = [[CBStatus alloc] init];
-    status3.text = @"hello";
-    status3.repostText = @"repost";
-    status3.repostImage = [UIImage imageNamed:@"jobs.jpg"];
-    status3.repostImageURL = [NSURL URLWithString:@"http://ww1.sinaimg.cn/thumbnail/982a42b9gw1dzfpij9efjj.jpg"];
-    status3.avatarURL = [NSURL URLWithString:@"http://tp2.sinaimg.cn/2693551385/180/5629884601/1"];
+    status3.name = @"Apple";
+    status3.text = @"史蒂夫·乔布斯";
+    status3.repostText = @"史蒂芬·保罗·乔布斯（英语：Steven Paul Jobs，1955年2月24日－2011年10月5日），通称史蒂夫·乔布斯（英语：Steve Jobs），苹果公司的创始人之一，曾任董事长及首席执行官职位，也是皮克斯动画的创办人并曾任首席执行官。";
+    status3.repostImageURL = [NSURL URLWithString:@"http://upload.wikimedia.org/wikipedia/commons/b/b9/Steve_Jobs_Headshot_2010-CROP.jpg"];
+    status3.avatarURL = [NSURL URLWithString:@"http://upload.wikimedia.org/wikipedia/zh/a/ab/Apple-logo.png"];
     status3.commentCount = [NSNumber numberWithInt:10];
     status3.repostCount = [NSNumber numberWithInt:57];
+    status3.fromText = @"sWiBoo";
     [self.status addObject:status3];
     
 }
@@ -120,16 +122,16 @@
 
 - (void)configureCell:(CBStatusCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-    NSURL *avatarImageURL = [NSURL URLWithString:@"http://tp1.sinaimg.cn/1268530512/180/5619272112/1"];
+    NSUInteger row = indexPath.row;
+    CBStatus *status = [self.status objectAtIndex:row];
     
-    cell.name = @"Apple iOS";
-    cell.avatarURL = avatarImageURL;
-    cell.postDate = [NSDate dateWithTimeIntervalSinceNow:86401];
-    cell.text = @"iPhone是苹果公司旗下的一个智能手机系列，此系列手机搭载苹果公司研发的iOS手机操作系统。第一代iPhone于2007年1月9日由时任苹果公司CEO的史蒂夫·乔布斯发布，并在6月29日正式发售。";
-
-    [cell setRepostText:@"iOS是由苹果公司开发的操作系统。最初是设计给iPhone使用，后来陆续套用到iPod touch、iPad以及Apple TV产品上。" andRepostImageWithURL:avatarImageURL];
-    cell.textFrom = @"sWiBoo";
-    [cell setCommentCount:@1234 andRepostCount:@23456];
+    cell.name = status.name;
+    cell.avatarURL = status.avatarURL;
+    cell.postDate = [NSDate dateWithTimeIntervalSinceNow:3601];
+    cell.text = status.text;
+    [cell setRepostText:status.repostText andRepostImageWithURL:status.repostImageURL];
+    cell.textFrom = status.fromText;
+    [cell setCommentCount:status.commentCount andRepostCount:status.repostCount];
 }
 
 @end
