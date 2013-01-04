@@ -30,6 +30,7 @@
     
     
     CBStatus *status = [[CBStatus alloc] init];
+    status.statusID = @"123235374562";
     status.name = @"Apple";
     status.text = @"苹果公司，原称苹果电脑（股份有限）公司（Apple Computer, Inc.），于2007年1月9日在旧金山Macworld Expo上宣布改为现名。";
     status.repostText = @"在创立电脑前，创始人之一沃兹已经是一个电子学骇客，自1975年，他在惠普上班和帮斯蒂夫·乔布斯设计Atari电子游戏。";
@@ -41,6 +42,7 @@
     [self.status addObject:status];
     
     CBStatus *status2 = [[CBStatus alloc] init];
+    status2.statusID = @"12323537452";
     status2.name = @"Apple";
     status2.text = @"苹果公司，原称苹果电脑（股份有限）公司（Apple Computer, Inc.），于2007年1月9日在旧金山Macworld Expo上宣布改为现名。";
     status2.imageURL = [NSURL URLWithString:@"http://upload.wikimedia.org/wikipedia/commons/d/d8/Macintosh_classic.jpg"];
@@ -51,6 +53,7 @@
     [self.status addObject:status2];
     
     CBStatus *status3 = [[CBStatus alloc] init];
+    status3.statusID = @"56235374562";
     status3.name = @"Apple";
     status3.text = @"史蒂夫·乔布斯";
     status3.repostText = @"史蒂芬·保罗·乔布斯（英语：Steven Paul Jobs，1955年2月24日－2011年10月5日），通称史蒂夫·乔布斯（英语：Steve Jobs），苹果公司的创始人之一，曾任董事长及首席执行官职位，也是皮克斯动画的创办人并曾任首席执行官。";
@@ -62,6 +65,7 @@
     [self.status addObject:status3];
     
     CBStatus *status4 = [[CBStatus alloc] init];
+    status4.statusID = @"74562";
     status4.name = @"Apple";
     status4.text = @"苹果公司，原称苹果电脑（股份有限）公司（Apple Computer, Inc.），于2007年1月9日在旧金山Macworld Expo上宣布改为现名。";
     status4.avatarURL = [NSURL URLWithString:@"http://upload.wikimedia.org/wikipedia/zh/a/ab/Apple-logo.png"];
@@ -133,6 +137,7 @@
     NSUInteger row = indexPath.row;
     CBStatus *status = [self.status objectAtIndex:row];
     
+    cell.statusID = status.statusID;
     cell.name = status.name;
     cell.avatarURL = status.avatarURL;
     cell.postDate = [NSDate dateWithTimeIntervalSinceNow:3601];

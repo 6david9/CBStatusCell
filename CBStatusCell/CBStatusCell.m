@@ -18,7 +18,7 @@
 @property (strong, nonatomic) UILabel *postDateLabel;
 @property (strong, nonatomic) UIView *postTextView;
 @property (strong, nonatomic) UILabel *postTextLabel;
-@property (strong, nonatomic) UIImageView *postImageView;
+@property (strong, nonatomic) UIButton *postImageView;
 @property (strong, nonatomic) UIImageView *repostTextBackgroudView;
 @property (strong, nonatomic) UILabel *repostTextLabel;
 @property (strong, nonatomic) UIButton *repostImageView;
@@ -30,7 +30,6 @@
 @end
 
 @implementation CBStatusCell
-
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -47,7 +46,7 @@
         self.postDateLabel = [[UILabel alloc] initWithFrame:CGRectMake(231, 11, 75, 14)];
         self.postTextView = [[UIView alloc] initWithFrame:CGRectMake(59, 28, 240, 18)];
         self.postTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 240, 18)];
-        self.postImageView = [[UIImageView alloc] initWithFrame:CGRectMake(60, 60, 50, 50)];
+        self.postImageView = [UIButton buttonWithType:UIButtonTypeCustom];
         self.repostTextBackgroudView = [[UIImageView alloc] initWithFrame:CGRectMake(59, 59, 240, 128)];
         self.repostTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 3, 240, 20)];
         self.repostImageView = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -83,9 +82,16 @@
         self.repostTextBackgroudView.image = backgroudImage;
         self.repostTextBackgroudView.clipsToBounds = YES;
         self.repostTextBackgroudView.userInteractionEnabled = YES;  /* 实现repostImageView交互 */
-        // 转发图片
+        // 可点击图片
+        self.postImageView.frame = CGRectMake(60, 60, 50, 50);
+        [self.postImageView addTarget:self
+                               action:@selector(postImageDidTouch:)
+                     forControlEvents:UIControlEventTouchUpInside];
+        
         self.repostImageView.frame =  CGRectMake(5, 25, 50, 50);
-        [self.repostImageView addTarget:self action:@selector(imageViewDidTouch:) forControlEvents:UIControlEventTouchUpInside];
+        [self.repostImageView addTarget:self
+                                 action:@selector(repostImageDidTouch:)
+                       forControlEvents:UIControlEventTouchUpInside];
         // 是否显示？
         self.postTextView.hidden = YES;
         self.postTextLabel.hidden = YES;
@@ -337,9 +343,14 @@
 }
 
 #pragma mark -
-- (void)imageViewDidTouch:(UIButton *)sender
+- (void)postImageDidTouch:(UIButton *)sender
 {
-    NSLog(@"%s", __PRETTY_FUNCTION__);
+    NSLog(@"%s:status id:%@", __PRETTY_FUNCTION__, self.statusID);
+}
+
+- (void)repostImageDidTouch:(UIButton *)sender
+{
+    NSLog(@"%s:status id:%@", __PRETTY_FUNCTION__, self.statusID);
 }
 
 
