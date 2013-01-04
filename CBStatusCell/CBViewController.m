@@ -32,7 +32,6 @@
     CBStatus *status = [[CBStatus alloc] init];
     status.name = @"Apple";
     status.text = @"苹果公司，原称苹果电脑（股份有限）公司（Apple Computer, Inc.），于2007年1月9日在旧金山Macworld Expo上宣布改为现名。";
-    status.imageURL = [NSURL URLWithString:@"http://ww1.sinaimg.cn/thumbnail/982a42b9gw1dzfpij9efjj.jpg"];
     status.repostText = @"在创立电脑前，创始人之一沃兹已经是一个电子学骇客，自1975年，他在惠普上班和帮斯蒂夫·乔布斯设计Atari电子游戏。";
     status.repostImageURL = [NSURL URLWithString:@"http://upload.wikimedia.org/wikipedia/commons/f/f6/Steve_Wozniak.jpg"];
     status.avatarURL = [NSURL URLWithString:@"http://upload.wikimedia.org/wikipedia/zh/a/ab/Apple-logo.png"];
@@ -44,7 +43,7 @@
     CBStatus *status2 = [[CBStatus alloc] init];
     status2.name = @"Apple";
     status2.text = @"苹果公司，原称苹果电脑（股份有限）公司（Apple Computer, Inc.），于2007年1月9日在旧金山Macworld Expo上宣布改为现名。";
-    status2.imageURL = [NSURL URLWithString:@"http://ww1.sinaimg.cn/thumbnail/982a42b9gw1dzfpij9efjj.jpg"];
+    status2.imageURL = [NSURL URLWithString:@"http://upload.wikimedia.org/wikipedia/commons/d/d8/Macintosh_classic.jpg"];
     status2.avatarURL = [NSURL URLWithString:@"http://upload.wikimedia.org/wikipedia/zh/a/ab/Apple-logo.png"];
     status2.commentCount = [NSNumber numberWithInt:10];
     status2.repostCount = [NSNumber numberWithInt:57];
@@ -61,6 +60,15 @@
     status3.repostCount = [NSNumber numberWithInt:57];
     status3.fromText = @"sWiBoo";
     [self.status addObject:status3];
+    
+    CBStatus *status4 = [[CBStatus alloc] init];
+    status4.name = @"Apple";
+    status4.text = @"苹果公司，原称苹果电脑（股份有限）公司（Apple Computer, Inc.），于2007年1月9日在旧金山Macworld Expo上宣布改为现名。";
+    status4.avatarURL = [NSURL URLWithString:@"http://upload.wikimedia.org/wikipedia/zh/a/ab/Apple-logo.png"];
+    status4.commentCount = [NSNumber numberWithInt:10];
+    status4.repostCount = [NSNumber numberWithInt:57];
+    status4.fromText = @"sWiBoo";
+    [self.status addObject:status4];
     
 }
 
@@ -128,7 +136,7 @@
     cell.name = status.name;
     cell.avatarURL = status.avatarURL;
     cell.postDate = [NSDate dateWithTimeIntervalSinceNow:3601];
-    cell.text = status.text;
+    [cell setText:status.text andImageWithURL:status.imageURL];
     [cell setRepostText:status.repostText andRepostImageWithURL:status.repostImageURL];
     cell.textFrom = status.fromText;
     [cell setCommentCount:status.commentCount andRepostCount:status.repostCount];
