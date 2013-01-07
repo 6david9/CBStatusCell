@@ -103,8 +103,10 @@
         self.commentAndRepostCountLabel.hidden = YES;
         // 头像layer圆角
         CALayer *avatarViewLayer = self.avatarView.layer;
-        avatarViewLayer.masksToBounds = YES;
+        avatarViewLayer.masksToBounds = YES;        /* 类似clipstobounds,content为图片有效 */
         avatarViewLayer.cornerRadius = 4;
+        avatarViewLayer.borderWidth = 1;
+        avatarViewLayer.borderColor = [UIColor lightGrayColor].CGColor;
         
         
         /* 加入到当前视图 */
