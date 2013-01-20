@@ -19,6 +19,8 @@
 		08101A64166B677B005C84A2 /* timeline_rt_border_t.png in Resources */ = {isa = PBXBuildFile; fileRef = 08101A62166B677B005C84A2 /* timeline_rt_border_t.png */; };
 		08101A65166B677B005C84A2 /* timeline_rt_border_t@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 08101A63166B677B005C84A2 /* timeline_rt_border_t@2x.png */; };
 		082D5DBC1695C0DA00CEC109 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 082D5DBB1695C0DA00CEC109 /* QuartzCore.framework */; };
+		08361A1A169C11A5007D2A33 /* CBPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08361A18169C11A5007D2A33 /* CBPreviewViewController.m */; };
+		08361A1B169C11A5007D2A33 /* CBPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08361A19169C11A5007D2A33 /* CBPreviewViewController.xib */; };
 		08690900169548C400810273 /* cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 086908FF169548C400810273 /* cell.xib */; };
 		088812BA166B27EE000C4603 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 088812B9166B27EE000C4603 /* UIKit.framework */; };
 		088812BC166B27EE000C4603 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 088812BB166B27EE000C4603 /* Foundation.framework */; };
@@ -74,6 +76,9 @@
 		08101A62166B677B005C84A2 /* timeline_rt_border_t.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = timeline_rt_border_t.png; path = ../../sWiBoo/sWiBoo/Images/timeline_rt_border_t.png; sourceTree = "<group>"; };
 		08101A63166B677B005C84A2 /* timeline_rt_border_t@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "timeline_rt_border_t@2x.png"; path = "../../sWiBoo/sWiBoo/Images/timeline_rt_border_t@2x.png"; sourceTree = "<group>"; };
 		082D5DBB1695C0DA00CEC109 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		08361A17169C11A5007D2A33 /* CBPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPreviewViewController.h; sourceTree = "<group>"; };
+		08361A18169C11A5007D2A33 /* CBPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPreviewViewController.m; sourceTree = "<group>"; };
+		08361A19169C11A5007D2A33 /* CBPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CBPreviewViewController.xib; sourceTree = "<group>"; };
 		086908FF169548C400810273 /* cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cell.xib; sourceTree = "<group>"; };
 		088812B5166B27EE000C4603 /* CBStatusCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CBStatusCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		088812B9166B27EE000C4603 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -155,6 +160,9 @@
 			children = (
 				080A25441695C52100FC12EE /* CBStatusCell.h */,
 				080A25451695C52100FC12EE /* CBStatusCell.m */,
+				08361A17169C11A5007D2A33 /* CBPreviewViewController.h */,
+				08361A18169C11A5007D2A33 /* CBPreviewViewController.m */,
+				08361A19169C11A5007D2A33 /* CBPreviewViewController.xib */,
 				08E84F27166B971E0033D5FC /* NSString+MD5.h */,
 				08E84F28166B97260033D5FC /* NSString+MD5.m */,
 				08E84F05166B83EB0033D5FC /* SDWebImage */,
@@ -392,6 +400,7 @@
 				08101A64166B677B005C84A2 /* timeline_rt_border_t.png in Resources */,
 				08101A65166B677B005C84A2 /* timeline_rt_border_t@2x.png in Resources */,
 				08690900169548C400810273 /* cell.xib in Resources */,
+				08361A1B169C11A5007D2A33 /* CBPreviewViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +449,7 @@
 				08E84F21166B83EB0033D5FC /* UIImageView+WebCache.m in Sources */,
 				08E84F29166B97270033D5FC /* NSString+MD5.m in Sources */,
 				080A25461695C52100FC12EE /* CBStatusCell.m in Sources */,
+				08361A1A169C11A5007D2A33 /* CBPreviewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "UIImageView+WebCache.h"
 #import "UIButton+WebCache.h"
+#import "CBPreviewViewController.h"
 
 @interface CBStatusCell()
 
@@ -103,10 +104,8 @@
         self.commentAndRepostCountLabel.hidden = YES;
         // 头像layer圆角
         CALayer *avatarViewLayer = self.avatarView.layer;
-        avatarViewLayer.masksToBounds = YES;        /* 类似clipstobounds,content为图片有效 */
+        avatarViewLayer.masksToBounds = YES;
         avatarViewLayer.cornerRadius = 4;
-        avatarViewLayer.borderWidth = 1;
-        avatarViewLayer.borderColor = [UIColor lightGrayColor].CGColor;
         
         
         /* 加入到当前视图 */
@@ -348,6 +347,20 @@
 - (void)postImageDidTouch:(UIButton *)sender
 {
     NSLog(@"%s:status id:%@", __PRETTY_FUNCTION__, self.statusID);
+    
+    if (self.containerViewController != nil)
+    {
+        CBPreviewViewController *previewerController;
+        
+        previewerController = [[CBPreviewViewController alloc]
+                                    initWithNibName:@"CBPreviewViewController"
+                                             bundle:nil];
+        previewerController.imageURL = self.imageURL;
+        previewerController.containerController = self.containerViewController;
+        
+        [self.containerViewController presentModalViewController:previewerController animated:NO];
+    }
+    
 }
 
 - (void)repostImageDidTouch:(UIButton *)sender
@@ -360,7 +373,7 @@
 - (NSString *)dateStringFromDate:(NSDate *)date
 {
     NSString *dateString = nil;
-    NSUInteger secondsSinceNow = (NSUInteger)[date timeIntervalSinceNow];
+    NSInteger secondsSinceNow = labs((NSInteger)[date timeIntervalSinceNow]);
     
     // 几秒前
     // 一分钟60秒
@@ -415,4 +428,4 @@
     return calcSize;
 }
 
-@end;
+@end

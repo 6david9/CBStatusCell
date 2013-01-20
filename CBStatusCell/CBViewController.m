@@ -145,6 +145,7 @@
     [cell setRepostText:status.repostText andRepostImageWithURL:status.repostImageURL];
     cell.textFrom = status.fromText;
     [cell setCommentCount:status.commentCount andRepostCount:status.repostCount];
+    cell.containerViewController = self;
 }
 
 @end
